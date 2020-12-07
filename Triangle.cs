@@ -7,7 +7,7 @@ namespace ITEA_Classwork11
 {
     class Triangle : Figure
     {
-        public List<double> Sides { get; set; }
+        public List<double> sides = new List<double>();
 
         public Triangle(Point[] points)
         {
@@ -18,10 +18,10 @@ namespace ITEA_Classwork11
                 {
                     if (i + 1 == 3)
                     {
-                        Sides.Add(GetSide(points[points.Length - 1], points[0]));
+                        sides.Add(GetSide(points[points.Length - 1], points[0]));
                         break;
                     }
-                    Sides.Add(GetSide(points[i], points[i + 1]));
+                    sides.Add(GetSide(points[i], points[i + 1]));
                 }
                 Area = GetArea();
             }
@@ -34,12 +34,12 @@ namespace ITEA_Classwork11
         public override double GetArea()
         {
             double p = 0;
-            foreach(var side in Sides)
+            foreach(var side in sides)
             {
                 p += side;
             }
             p = p / 2;
-            return Sqrt(p * (p - Sides[0]) * (p - Sides[1]) * (p - Sides[2]));
+            return Sqrt(p * (p - sides[0]) * (p - sides[1]) * (p - sides[2]));
         }
         public override double GetSide(Point p1, Point p2)
         {
