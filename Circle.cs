@@ -16,8 +16,12 @@ namespace ITEA_Classwork11
             {
                 Center = points[0];
                 Radius = GetSide(points[0], points[1]);
+                Area = GetArea();
             }
-            Area = GetArea();
+            else
+            {
+                throw new ArgumentException();
+            }
         }
         public override double GetArea()
         {

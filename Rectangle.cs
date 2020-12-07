@@ -24,6 +24,10 @@ namespace ITEA_Classwork11
                 }
                 Area = GetArea();
             }
+            else
+            {
+                throw new ArgumentException();
+            }
         }
         public override double GetArea()
         {
